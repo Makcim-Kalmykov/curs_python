@@ -6,29 +6,42 @@
 
 """
 
-def input_number_int_positive():                      # ввод целого числа больше 0
-    num = ""
-    temp = False
-    while temp == False:
-        while num.isnumeric() == False:
-            try:
-                num = int(input(f"Введите целое число больше 0: "))
-                break
-            except ValueError:
-                print("Неверный ввод")
-                continue
-        num = int(num)
-        if (num == 0 or num < 0):
-            print("Введеное число меньше или равно 0")
-            num = ""
-        else:
-            temp = True
-    return num    
+# def input_number_int_positive():                      # ввод целого числа больше 0
+#     num = ""
+#     temp = False
+#     while temp == False:
+#         while num.isnumeric() == False:
+#             try:
+#                 num = int(input(f"Введите целое число больше 0: "))
+#                 break
+#             except ValueError:
+#                 print("Неверный ввод")
+#                 continue
+#         num = int(num)
+#         if (num == 0 or num < 0):
+#             print("Введеное число меньше или равно 0")
+#             num = ""
+#         else:
+#             temp = True
+#     return num    
     
-number = input_number_int_positive()
+# number = input_number_int_positive()
 
-list = {}
-for i in range(1, number + 1):
-    list[i] = f"{round((1 + 1 / i)**i, 2)}"
+# list = {}
+# for i in range(1, number + 1):
+#     list[i] = f"{round((1 + 1 / i)**i, 2)}"
 
-print(f" n = {number}: {list}")
+# print(f" n = {number}: {list}")
+
+
+
+
+# $$$$$$$$       ВАРИАНТ ИЗ РАЗБОРА        $$$$$$$$$$$$
+
+num = int(input("Введите число"))
+lst = {}
+for j in range(1, num + 1):
+    lst[j] = round((1 + 1 / j) ** j, 2)
+print(f"{sum(lst.values()):.2f}")           # .2f - форматирование строки
+print(lst)
+

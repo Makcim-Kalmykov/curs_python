@@ -4,48 +4,63 @@
 Позиции хранятся в файле file.txt в одной строке одно число.
 """
 
-from random import randint
+# from random import randint
 
-def input_number_int_positive():                # ввод целого числа больше 0
-    num = ""
-    temp = False
-    while temp == False:
-        while num.isnumeric() == False:
-            try:
-                num = int(input(f"Введите целое число больше 0: "))
-                break
-            except ValueError:
-                print("Неверный ввод")
-                continue
-        num = int(num)
-        if (num == 0 or num < 0):
-            print("Введеное число меньше или равно 0")
-            num = ""
-        else:
-            temp = True
-    return num
 
-num = input_number_int_positive()
+# def input_number_int_positive():                # ввод целого числа больше 0
+#     num = ""
+#     temp = False
+#     while temp == False:
+#         while num.isnumeric() == False:
+#             try:
+#                 num = int(input(f"Введите целое число больше 0: "))
+#                 break
+#             except ValueError:
+#                 print("Неверный ввод")
+#                 continue
+#         num = int(num)
+#         if (num == 0 or num < 0):
+#             print("Введеное число меньше или равно 0")
+#             num = ""
+#         else:
+#             temp = True
+#     return num
 
-list1 = []
-for i in range(num):
-    list1.append(randint(-num, num))
 
-print(f"Список из {num} элемментов из промежутка [{-num}, {num}]: {list1}")
+# num = input_number_int_positive()
 
-list2 = []
-with open("file_2.txt", "r") as file:
-    for line in file:
-        list2.append(int(line))
+# list1 = []
+# for i in range(num):
+#     list1.append(randint(-num, num))
 
-print(f"Позиции элементов для перемножения из файла file_2.txt: {list2}")
+# print(f"Список из {num} элемментов из промежутка [{-num}, {num}]: {list1}")
 
-result = 1
-temp = ""
+# list2 = []
+# with open("file_2.txt", "r") as file:
+#     for line in file:
+#         list2.append(int(line))
 
-for i in range(0, len(list2)):
-    if list2[i] <= len(list1) - 1:
-        result *= list1[list2[i]]
-        temp += f"{list1[list2[i]]}*"
+# print(f"Позиции элементов для перемножения из файла file_2.txt: {list2}")
 
-print(f"Результат произведения {temp[:-1]} = {result}")
+# result = 1
+# temp = ""
+
+# for i in range(0, len(list2)):
+#     if list2[i] <= len(list1) - 1:
+#         result *= list1[list2[i]]
+#         temp += f"{list1[list2[i]]}*"
+
+# print(f"Результат произведения {temp[:-1]} = {result}")
+
+
+# $$$$$$$$       ВАРИАНТ ИЗ РАЗБОРА        $$$$$$$$$$$$
+
+num = 3
+rez = 1
+lst = list(range(-num, num + 1))        # [-3, -2, -1 ... 2, 3]
+print(lst)
+
+data = open('file.txt', 'r')
+for el in data:
+    rez *= lst[int(el - 1)]
+print(result)

@@ -4,7 +4,7 @@
 Пример:
 - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-"""
+# """
 def input_number_int_positive():                      # ввод целого числа больше 0
     num = ""
     temp = False
@@ -43,3 +43,20 @@ for i in range(1, n+1):
     list2.append(temp_list)
 
 print(list1, list2)
+
+
+
+
+# $$$$$$$$       ВАРИАНТ ИЗ РАЗБОРА        $$$$$$$$$$$$
+
+
+# number = int(input("Введите число: "))
+# rez = []
+# for i in range(1, number + 1):
+#     if i > 1:
+#         rez.append(i * rez[-1])
+#     else:
+#         rez.append(i)
+
+# print(rez)
+
