@@ -20,3 +20,18 @@ while temp > 1:
 lst.reverse()
 
 print(f"{num} -> {lst}")
+
+
+
+
+
+
+"""
+ВАРИАНТ ИЗ ЗАЛА ЧЕРЕЗ РЕКУРСИЮ """
+
+def get_binary(digit):
+    if digit == 0:
+        return ""
+    return get_binary(digit // 2) + str(digit % 2)
+
+print(get_binary(10))

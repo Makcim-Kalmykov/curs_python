@@ -18,6 +18,6 @@ for i in range(num):
     lst.append(round(random(), 2))
     lst2.append(randint(0, 10))
 
-c = [round(lst[i]) + lst2[i] for i in range(len(lst))]
+c = [round((lst[i]), 2) + lst2[i] for i in range(len(lst))]
 
 print(f"{c} => разница между максимальным и минимальным значением дробной части {max(lst) - min(lst)}")

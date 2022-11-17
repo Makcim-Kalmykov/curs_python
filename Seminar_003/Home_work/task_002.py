@@ -27,7 +27,7 @@ if len(lst) % 2 == 0:
     print(f"{lst} => {lst_multiplication}")
 
 else:
-    numb = 1
+    # numb = 1
     while i < (len(lst) - 1) / 2:
         lst_multiplication.append(lst[i] * lst[-i - 1])
         i += 1 

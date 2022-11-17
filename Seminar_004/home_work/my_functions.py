@@ -61,6 +61,3 @@ def list_multipliers(a):                        #  РАЗЛОЖЕНИЕ ЧИСЛ
             i += 1
     return lst
 
-
-
-
